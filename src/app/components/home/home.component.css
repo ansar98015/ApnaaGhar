@@ -1,0 +1,38 @@
+.home-comp{
+    /* height: 100vh; */
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.home-header{
+    height: 10%;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.home-header-left{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.img-div{
+    height: 75%;
+}
+
+.projIcon{
+    height: 100%;
+}
+
+.proj-title{
+    color: #017de0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 0.6rem;
+}
