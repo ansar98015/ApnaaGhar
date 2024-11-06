@@ -1,0 +1,17 @@
+.home-comp{
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.home-header{
+    height: 10%;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+}
+
+.img-div{
+    height: 75%;
+}
