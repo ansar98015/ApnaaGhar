@@ -7,3 +7,23 @@
     border-bottom: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.home-btn-div{
+    background-color: var(--primaryColor);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.headerInputText{
+    height: 2rem;
+    width: 33vw;
+}
+
+.headerInputSerBtn{
+    height: 2rem;
+}
+
+.user-div{
+    cursor: pointer;
+}

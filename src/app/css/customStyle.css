@@ -3,6 +3,10 @@
     color: #017de0;
 }
 
+:root {
+    --primaryColor: #017de0;
+}
+
 /* --------------background color----------------- */
 
 .bgWhite{
@@ -20,6 +24,30 @@
 }
 
 /*---------------display flex----------------*/
+
+.gapRem0-5{
+    gap:0.5rem
+}
+
+.gapRem1{
+    gap:1rem
+}
+
+.gapRem1-5{
+    gap:1.5rem
+}
+
+.gapRem2{
+    gap:2rem
+}
+
+.gapRem2-5{
+    gap:2.5rem
+}
+
+.gapRem3{
+    gap:3rem
+}
 
 .display-flex {
     display: flex;
