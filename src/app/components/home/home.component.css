@@ -1,0 +1,164 @@
+.carousel-temp-div{
+    height: 39vh;
+    cursor: pointer;
+}
+
+.carousel-card{
+    width: 91vw;
+}
+
+::ng-deep .carousel-temp-item .p-image img{
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.carousel-temp-item{
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    background-color: aliceblue;
+}
+
+.carousel-temp-details{
+    height: 26%;
+}
+
+.prop-detail-pBtn{
+    height: 2rem;
+}
+
+.rupee{
+    font-size: 0.8rem;
+}
+
+.propData{
+    font-family: system-ui;
+    font-weight: 400;
+}
+
+.onWards{
+    font-family: system-ui;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.title,
+.cardTitle{
+    font-weight: 500;
+}
+
+.location,
+.sqft,
+.cardLocation,
+.cardSqft{
+    color: darkslategrey;
+    font-size: 0.9rem;
+}
+
+.cardTitle,
+.cardLocation,
+.cardSqft{
+    width: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+::ng-deep.carousel-temp-div .p-card.p-component{
+    height: 100%;
+}
+
+::ng-deep.carousel-temp-div .p-card.p-component .p-card-header{
+    height: 60%;
+}
+
+.card-image-div{
+    overflow: hidden;
+}
+
+.card-image{
+    border-radius: 5px 5px 0 0;
+    transition: transform 0.5s ease;
+}
+
+.card-image:hover {
+    transform: scale(2);
+}
+
+.carousel-header-name{
+    font-size: 1.5rem;
+}
+
+::ng-deep.carousel-temp-div .p-card .p-card-body{
+    padding: 0 !important;
+}
+
+::ng-deep.carousel-temp-div .p-card .p-card-content{
+    padding: 0.5rem;
+}
+
+.card-body-left{
+    gap: 0.3rem;
+}
+
+.seeAll{
+    font-size: 0.8rem;
+    color: var(--primaryColor);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.seeAllIcon{
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+::ng-deep .carousel-div .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    width: 1.5rem;
+    height: 0.3rem;
+    border-radius: 10px;
+}
+
+.horizon-card{
+    transition: box-shadow 0.3s ease;
+}
+.multi-card{
+    height: 47%;
+    width: 32.5%;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+.horizon-card:hover,
+.multi-card:hover {
+    box-shadow: 0 4px 0.3rem rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+
+::ng-deep.multi-card-div .p-card .p-card-body,
+::ng-deep.multi-card-div .p-card .p-card-body .p-card-content{
+    height: 100%;
+}
+
+.mcard-img-div{
+    width: 41%;
+    overflow: hidden;
+}
+
+::ng-deep.multi-card-carousel .carousel-temp-div .p-card .p-card-content{
+    padding: 0rem;
+}
+
+::ng-deep.multi-card-carousel img{
+    transition: transform 0.5s ease;
+    border-radius: 5px 0 0 5px;
+}
+
+::ng-deep.multi-card-carousel img:hover {
+    transform: scale(2);
+}
+
+::ng-deep.mcard-prop-bottom-right .p-button{
+    padding: 0.5rem 1rem;
+}
+
+.mcardSqft{
+    width:7rem;
+}
