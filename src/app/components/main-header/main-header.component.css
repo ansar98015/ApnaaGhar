@@ -27,3 +27,17 @@
 .user-div{
     cursor: pointer;
 }
+
+::ng-deep.header-input .p-megamenu.p-component.p-megamenu-horizontal{
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+::ng-deep.header-input .p-megamenu .p-submenu-list{
+    width: 10rem;
+}
+
+::ng-deep.header-input .p-megamenu .p-menuitem > .p-menuitem-content .p-menuitem-link{
+    padding: 0.5rem 1.25rem;
+}
