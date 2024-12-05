@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   propertiesCategory:any[] = [];
   multiShowProperties:any[] = [];
   multiPropertiesData:any[] = [];
+  searchTabDataSource:any[] = [];
 
   constructor() { }
 
@@ -22,6 +23,14 @@ export class HomeComponent implements OnInit {
   }
 
   propData(){
+    this.searchTabDataSource = [
+      { title: 'BUY', content: 'Tab BUY' },
+      { title: 'RENT / PG', content: 'Tab 2 Content' },
+      { title: 'PROJECTS', content: 'Tab 3 Content' },
+      { title: 'COMMERICAL', content: 'Tab 4 Content' },
+      { title: 'DEALERS', content: 'Tab 5 Content' }
+    ];
+    
     this.propertiesData = [
       {
         "id": 1,

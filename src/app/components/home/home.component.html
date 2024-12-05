@@ -1,4 +1,25 @@
 <div>
+    <div class="headerSearch-ImagePanel width100pc">
+        <p-image 
+        src="./../../../assets/images/searchBackgroundImage.jpg"
+        alt="Image" 
+        width="100%"
+        height="100%"/>
+        <div class="filter-container">
+            <div class="filter-title">Search Here</div>
+            <div class="filter-body">
+                <p-tabView class="filter-tab">
+                    <p-tabPanel *ngFor="let tab of searchTabDataSource" [header]="tab.title">
+                        <p-inputGroup>
+                            <input type="text" pInputText placeholder="Search here" class="headerInputText"/>
+                            <button type="button" pButton icon="pi pi-search" class="headerInputSerBtn">&nbsp;Search</button>
+                        </p-inputGroup>
+                    </p-tabPanel>
+                </p-tabView>
+            </div>
+        </div>
+    </div>
+
     <div class="carousel-div display-flex justify-content-center align-items-center">
         <div class="card carousel-card">
             <p-carousel 
