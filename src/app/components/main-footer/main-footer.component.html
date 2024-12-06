@@ -1,3 +1,43 @@
-<p>
-  main-footer works!
-</p>
+<div class="footer-comp">
+  <div class="propertyCity-section display-flex justify-content-center paddingBLRem2">
+    <div class="propertyCity-div display-flex justify-content-space-between">
+      <div class="prop-type" *ngFor="let cities of topCityPropertyData">
+        <div class="city-title marginBRem0-3">{{cities.title}}</div>
+        <div class="cities marginBRem0-2" *ngFor="let cityname of cities.city">
+          <span class="pi pi-angle-right"></span>
+          <span>{{cities.type}} in {{cityname.city}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social-media-section display-flex justify-content-center">
+    <div class="social-media">
+      <div class="social-media-div display-flex justify-content-space-between align-items-center paddingBLRem0-6 paddingILRem0-5">
+        <div class="follow">Follow on</div>
+        <div class="follow-icons display-flex align-items-center gapRem1">
+          <div class="icon-div facebook"><span class="pi pi-facebook"></span></div>
+          <div class="icon-div instagram"><span class="pi pi-instagram"></span></div>
+          <div class="icon-div linkedin"><span class="pi pi-linkedin"></span></div>
+          <div class="icon-div pinterest"><span class="pi pi-pinterest"></span></div>
+          <div class="icon-div twitter"><span class="pi pi-twitter"></span></div>
+          <div class="icon-div youtube"><span class="pi pi-youtube"></span></div>
+        </div>
+      </div>
+      <div class="disclamer-div paddingBLRem0-5">
+        Disclaimer: ApnaaGhar Realty Services Limited is only an intermediary offering its platform to advertise
+        properties of Seller for a Customer/Buyer/User coming on its Website and is not and cannot be a party to or privy
+        to or control in any manner any transactions between the Seller and the Customer/Buyer/User. All the offers and
+        discounts on this Website have been extended by various Builder(s)/Developer(s) who have advertised their
+        products. ApnaaGhar is only communicating the offers and not selling or rendering any of those products or
+        services. It neither warrants nor is it making any representations with respect to offer(s) made on the site.
+        ApnaaGhar Realty Services Limited shall neither be responsible nor liable to mediate or resolve any disputes or
+        disagreements between the Customer/Buyer/User and the Seller and both Seller and Customer/Buyer/User shall settle
+        all such disputes without involving ApnaaGhar Realty Services Limited in any manner.
+      </div>
+    </div>
+  </div>
+  <div class="copyRight-div">
+    <div style="font-size: 0.85rem;">Copyright &copy; 2007-2024. All rights reserved. Developed by <span
+      class="developerName">Ansar Khan</span>❤️</div>
+  </div>
+</div>
