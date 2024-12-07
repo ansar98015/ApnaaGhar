@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { allPrimeNGModules } from '../../services/primeNGShared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   multiPropertiesData:any[] = [];
   searchTabDataSource:any[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.propData();
@@ -249,5 +250,9 @@ export class HomeComponent implements OnInit {
       { proptitle: 'Top New Projects', propData: multiPropDatas }
     ]
 
+  }
+
+  homeSearchClicked(tab:any, serchVal:any){
+    this.router.navigate(['/showAll'], { queryParams: { tab: tab.title, searchValue: serchVal.value }});
   }
 }

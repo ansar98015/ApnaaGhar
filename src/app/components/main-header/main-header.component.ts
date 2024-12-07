@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { allPrimeNGModules } from '../../services/primeNGShared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-header',
@@ -13,7 +14,7 @@ export class MainHeaderComponent implements OnInit {
   headerItems: any[] | undefined;
   items: any[] | undefined;
   searchPanelImage!:string;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.searchPanelImage = 'https://fastly.picsum.photos/id/411/5000/2358.jpg?hmac=YjkATffpMa8rh663_FXDsGY0W-Y0hAPfqpjXZoP65hQ'
@@ -146,4 +147,9 @@ export class MainHeaderComponent implements OnInit {
     ]
   }
 
+  headerBtnClicked(option: any){
+    if(option.label === "Home"){
+      this.router.navigate(['/home']);
+    }
+  }
 }

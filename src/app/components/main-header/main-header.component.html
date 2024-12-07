@@ -18,7 +18,8 @@
         </div>
         <div class="home-header-right display-flex align-items-center gapRem2">
             <div class="header-right-items display-flex align-items-center gapRem0-5">
-                <div *ngFor="let option of headerItems" class="home-btn-div display-flex gapRem0-5 paddingRem0-4">
+                <div *ngFor="let option of headerItems" class="home-btn-div display-flex gapRem0-5 paddingRem0-4"
+                    (click)="headerBtnClicked(option)">
                     <span [class]="option.icon"></span><span>{{option.label}}</span>
                 </div>
             </div>
