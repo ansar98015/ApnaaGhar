@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="carousel-div display-flex justify-content-center align-items-center">
+    <div class="carousel-div display-flex justify-content-center align-items-center paddingTRem1-5">
         <div class="card carousel-card">
             <p-carousel 
                 [value]="propertiesData" 
@@ -65,7 +65,8 @@
         </div>
     </div>
 
-    <div *ngFor="let prop of propertiesCategory" class="carousel-div-topTrend marginTRem0-5 display-flex justify-content-center align-items-center">
+    <div *ngFor="let prop of propertiesCategory; index as i" [ngClass]="(i+1)%2!==0? 'oddClass':'evenClass'" 
+        class="carousel-div-topTrend display-flex justify-content-center align-items-center paddingBLRem1-5">
         <div class="card carousel-card">
             <p-carousel 
                 [value]="prop.propData"
@@ -117,7 +118,7 @@
         </div>
     </div>
 
-    <div *ngFor="let prop of multiShowProperties" class="carousel-div-topTrend marginTRem0-5 display-flex justify-content-center align-items-center">
+    <div *ngFor="let prop of multiShowProperties" class="carousel-div-topTrend multiCard-carousel paddingBLRem1-5 display-flex justify-content-center align-items-center">
         <div class="card carousel-card multi-card-carousel">
             <p-carousel 
                 [value]="prop.propData"
