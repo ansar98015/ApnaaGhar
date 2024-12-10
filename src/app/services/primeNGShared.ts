@@ -52,7 +52,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
-import { DynamicDialog } from 'primeng/dynamicdialog';
+// import { DynamicDialog } from 'primeng/dynamicdialog';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
@@ -92,7 +92,7 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { RippleModule } from 'primeng/ripple';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
-import { Popover } from 'primeng/popover';
+// import { Popover } from 'primeng/popover';
 
 // import { EditorModule } from 'primeng/editor';
 // import { OrderListModule } from 'primeng/orderlist';
@@ -154,7 +154,7 @@ export const allPrimeNGModules: any[] = [
   ConfirmDialogModule,
   ConfirmPopupModule,
   DialogModule,
-  DynamicDialog,
+  // DynamicDialog,
   OverlayPanelModule,
   SidebarModule,
   TooltipModule,
@@ -194,5 +194,5 @@ export const allPrimeNGModules: any[] = [
   RippleModule,
   AutoFocusModule,
   AnimateOnScrollModule,
-  Popover
+  // Popover
 ];
