@@ -5,9 +5,9 @@
       <p-button
         *ngFor="let btn of filerBtns"
         [rounded]="true"
-        (click)="sidebartoggle()">{{btn.BtnName}}
-        <ng-container *ngIf="badgeValue > 0">
-          <span class="p-badge">{{ badgeValue }}</span>
+        (click)="sidebartoggle()">{{btn.btnName}}
+        <ng-container *ngIf="btn.badgeVal > 0">
+          <span class="p-badge">{{ btn.badgeVal }}</span>
         </ng-container>
       </p-button>
     </div>
