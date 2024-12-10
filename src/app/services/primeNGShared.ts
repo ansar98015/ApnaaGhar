@@ -3,7 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { CheckboxModule } from 'primeng/checkbox';
-import { ChipsModule } from 'primeng/chips';
+// import { ChipsModule } from 'primeng/chips';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { DropdownModule } from 'primeng/dropdown';
 import { FloatLabelModule } from 'primeng/floatlabel';
@@ -14,7 +14,7 @@ import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputSwitchModule } from 'primeng/inputswitch';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextarea } from 'primeng/inputtextarea';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputOtpModule } from 'primeng/inputotp';
 import { KnobModule } from 'primeng/knob';
@@ -27,7 +27,7 @@ import { RatingModule } from 'primeng/rating';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SliderModule } from 'primeng/slider';
 import { TreeSelectModule } from 'primeng/treeselect';
-import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
+// import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { SpeedDialModule } from 'primeng/speeddial';
@@ -52,7 +52,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
-import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DynamicDialog } from 'primeng/dynamicdialog';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
@@ -92,6 +92,7 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { RippleModule } from 'primeng/ripple';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import { Popover } from 'primeng/popover';
 
 // import { EditorModule } from 'primeng/editor';
 // import { OrderListModule } from 'primeng/orderlist';
@@ -104,7 +105,7 @@ export const allPrimeNGModules: any[] = [
   CalendarModule,
   CascadeSelectModule,
   CheckboxModule,
-  ChipsModule,
+  // ChipsModule,
   ColorPickerModule,
   DropdownModule,
   FloatLabelModule,
@@ -115,7 +116,7 @@ export const allPrimeNGModules: any[] = [
   InputGroupAddonModule,
   InputMaskModule,
   InputSwitchModule,
-  InputTextareaModule,
+  InputTextModule,
   InputNumberModule,
   InputOtpModule,
   KnobModule,
@@ -128,7 +129,7 @@ export const allPrimeNGModules: any[] = [
   SelectButtonModule,
   SliderModule,
   TreeSelectModule,
-  TriStateCheckboxModule,
+  // TriStateCheckboxModule,
   ToggleButtonModule,
   SplitButtonModule,
   SpeedDialModule,
@@ -153,7 +154,7 @@ export const allPrimeNGModules: any[] = [
   ConfirmDialogModule,
   ConfirmPopupModule,
   DialogModule,
-  DynamicDialogModule,
+  DynamicDialog,
   OverlayPanelModule,
   SidebarModule,
   TooltipModule,
@@ -193,4 +194,5 @@ export const allPrimeNGModules: any[] = [
   RippleModule,
   AutoFocusModule,
   AnimateOnScrollModule,
+  Popover
 ];
