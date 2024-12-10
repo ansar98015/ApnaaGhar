@@ -1,3 +1,16 @@
-<p>
-  show-all works!
-</p>
+
+<div class="showAll-comp display-flex justify-content-center">
+  <div class="filter-data-section">
+    <div class="filter-section display-flex justify-content-center align-items-center gapRem3">
+      <p-button
+        *ngFor="let btn of filerBtns"
+        [rounded]="true"
+        (click)="sidebartoggle()">{{btn.BtnName}}
+        <ng-container *ngIf="badgeValue > 0">
+          <span class="p-badge">{{ badgeValue }}</span>
+        </ng-container>
+      </p-button>
+    </div>
+  </div>
+</div>
+ 

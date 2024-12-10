@@ -9,10 +9,21 @@ import { allPrimeNGModules } from '../../services/primeNGShared';
   imports: [allPrimeNGModules],
 })
 export class ShowAllComponent implements OnInit {
+  badgeValue = 3;
+  filerBtns:any[] = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.filerBtns = [
+      {BtnName: 'Residential'},
+      {BtnName: 'Price'},
+      {BtnName: 'BHK'},
+      {BtnName: 'Ownership'}
+    ]
+  }
+
+  sidebartoggle(){
   }
 
 }

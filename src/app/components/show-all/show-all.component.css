@@ -1,0 +1,29 @@
+.filter-data-section{
+    width: 85%;
+}
+
+.filter-section{
+    height: 6vh;
+}
+
+::ng-deep .filter-section .p-button{
+    background: transparent;
+    color: #333;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.7rem;
+    border-color: #333;
+}
+
+::ng-deep .filter-section .p-button .p-button-label{
+    font-weight: 500;
+    font-family: system-ui;
+}
+
+::ng-deep.p-button{
+    box-shadow: none; 
+}
+
+::ng-deep.filter-section .p-button .p-badge{
+    color: white;
+    background: var(--primaryColor);
+}
