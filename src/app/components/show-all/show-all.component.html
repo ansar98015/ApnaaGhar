@@ -5,11 +5,58 @@
       <p-button
         *ngFor="let btn of filerBtns"
         [rounded]="true"
-        (click)="sidebartoggle()">{{btn.btnName}}
+        (click)="popupToggle($event, btn.btnName, popup)">{{btn.btnName}}
         <ng-container *ngIf="btn.badgeVal > 0">
           <span class="p-badge">{{ btn.badgeVal }}</span>
         </ng-container>
       </p-button>
+      <p-overlayPanel #popup>
+        <ng-container *ngIf="popupUi !== 'Price'">
+          <div class="filter-div gapRem0-5">
+            <div *ngFor="let option of filterOptionsData">
+              <p-checkbox 
+              (onChange)="filterCheckBoxValueChanged($event, option)"
+              [label]="option.name"
+              [binary]="true"
+              [(ngModel)]="option.value"/>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="popupUi === 'Price'">
+          <div class="price-div display-flex align-items-center flex-direction-column">
+            <div class="slider-div">
+              <p-slider 
+              [(ngModel)]="priceRangeValues"
+              [range]="true" 
+              [min]="minPrice"
+              [max]="maxPrice"
+              [step]="1000000"
+              class="slider"
+              (onChange)="sliderValueChanged($event)"/>
+            </div>
+            <div class="priceMinMax-div display-flex align-items-center gapRem1">
+              <div class="minPrice-div display-flex align-items-center gapRem0-5">
+                <label for="minPrice">Min</label>
+                <p-inputNumber 
+                [(ngModel)]="minPrice" 
+                inputId="minPrice" 
+                mode="decimal" 
+                locale="en-IN"
+                (onInput)="priceValueChanged($event, 'minPrice')"/>
+              </div>
+              <div class="maxPrice-div display-flex align-items-center gapRem0-5">
+                <label for="maxPrice">Max</label>
+                <p-inputNumber 
+                [(ngModel)]="maxPrice"
+                inputId="maxPrice"
+                mode="decimal" 
+                locale="en-IN"
+                (onInput)="priceValueChanged($event, 'maxPrice')"/>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </p-overlayPanel>
     </div>
   </div>
 </div>
