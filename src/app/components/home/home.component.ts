@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { allPrimeNGModules } from '../../services/primeNGShared';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../../services/shared-data.service';
+import { Guid } from 'guid-typescript'
 
 @Component({
   selector: 'app-home',
@@ -17,10 +18,12 @@ export class HomeComponent implements OnInit {
   multiShowProperties:any[] = [];
   multiPropertiesData:any[] = [];
   searchTabDataSource:any[] = [];
+  openWindowId!:Guid;
 
   constructor(private router: Router, private sharedDataService: SharedDataService) { }
 
   ngOnInit() {
+    this.openWindowId = Guid.create();
     this.propData();
   }
 
@@ -76,6 +79,9 @@ export class HomeComponent implements OnInit {
   }
 
   homeSearchClicked(tab:any, serchVal:any){
-    this.router.navigate(['/showAll'], { queryParams: { tab: tab.title, searchValue: serchVal.value }});
+    this.router.navigate(
+      ['/showAll'],
+      { queryParams: { tab: tab.title, searchValue: serchVal.value, owid: this.openWindowId }}
+    );
   }
 }
