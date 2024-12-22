@@ -127,6 +127,7 @@ export class SharedDataService {
       "description": "A spacious, modern apartment in the heart of downtown.",
       "price": '4.5 Cr',
       "location": "Downtown, Hyderabad",
+      "bhk": "2BHK",
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1200sq',
@@ -138,6 +139,7 @@ export class SharedDataService {
       "description": "A charming cottage with a beautiful garden.",
       "price": '1.8 Cr',
       "location": "Suburbs, Kolkata",
+      "bhk": "3BHK",
       "bedrooms": 3,
       "bathrooms": 2,
       "sq_ft": '1400sq',
@@ -149,6 +151,7 @@ export class SharedDataService {
       "description": "A luxurious villa with a private pool and ocean view.",
       "price": '75 Lac',
       "location": "Coastal, Odisha",
+      "bhk": "5BHK",
       "bedrooms": 5,
       "bathrooms": 4,
       "sq_ft": '3500sq',
@@ -160,6 +163,7 @@ export class SharedDataService {
       "description": "A trendy loft in a renovated industrial building.",
       "price": "32 Lac",
       "location": "City Center, Delhi",
+      "bhk": "1BHK",
       "bedrooms": 1,
       "bathrooms": 1,
       "sq_ft": '900sq',
@@ -171,6 +175,7 @@ export class SharedDataService {
       "description": "A family-friendly house with a large backyard.",
       "price": '40 Lac',
       "location": "Suburbs, Andhra Pradesh",
+      "bhk": "4BHK",
       "bedrooms": 4,
       "bathrooms": 3,
       "sq_ft": '2000sq',
@@ -182,6 +187,7 @@ export class SharedDataService {
       "description": "A condo with stunning ocean views.",
       "price": "60 Lac",
       "location": "Beachfront, Bhubaneswer",
+      "bhk": "2BHK",
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1100sq',
@@ -189,4 +195,15 @@ export class SharedDataService {
     },
   ];
 
+  imageList = [
+    { id:1, imageUrl: "https://picsum.photos/200/300?random=1" },
+    { id:2, imageUrl: "https://picsum.photos/200/300?random=2" },
+    { id:3, imageUrl: "https://picsum.photos/200/300?random=3" },
+    { id:4, imageUrl: "https://picsum.photos/200/300?random=4" },
+    { id:5, imageUrl: "https://picsum.photos/200/300?random=5" },
+    { id:6, imageUrl: "https://picsum.photos/200/300?random=6" },
+    { id:7, imageUrl: "https://picsum.photos/200/300?random=7" },
+    { id:8, imageUrl: "https://picsum.photos/200/300?random=8" },
+    { id:9, imageUrl: "https://picsum.photos/200/300?random=9" },
+  ]
 }

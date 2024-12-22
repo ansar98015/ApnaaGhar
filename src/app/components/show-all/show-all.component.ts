@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { allPrimeNGModules } from '../../services/primeNGShared';
 import { FormsModule } from '@angular/forms';
+import { SharedDataService } from '../../services/shared-data.service';
 
 @Component({
   selector: 'app-show-all',
@@ -20,8 +21,9 @@ export class ShowAllComponent implements OnInit {
   minPrice:number = 0;
   maxPrice:number = 1000000000;
   priceRangeValues: number[] = [this.minPrice, this.maxPrice];
+  multiPropertiesData:any[] = [];
 
-  constructor() { }
+  constructor(private sharedDataService: SharedDataService) { }
 
   ngOnInit() {
     this.filerBtns = [
@@ -31,6 +33,12 @@ export class ShowAllComponent implements OnInit {
       {btnName: 'Ownership', badgeVal: 0}
     ]
     this.optionsData();
+    let multiPropertiesData = JSON.parse(JSON.stringify(this.sharedDataService.multiPropertiesData));
+    let imageList = this.sharedDataService.imageList;
+    this.multiPropertiesData = multiPropertiesData.map((data: any)=>{
+      data['imageList'] = imageList;
+      return data;
+    })
   }
 
   optionsData(){
