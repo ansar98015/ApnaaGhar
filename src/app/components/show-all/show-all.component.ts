@@ -33,12 +33,19 @@ export class ShowAllComponent implements OnInit {
       {btnName: 'Ownership', badgeVal: 0}
     ]
     this.optionsData();
+    this.showAllData();
+  }
+
+  showAllData(){
     let multiPropertiesData = JSON.parse(JSON.stringify(this.sharedDataService.multiPropertiesData));
     let imageList = this.sharedDataService.imageList;
-    this.multiPropertiesData = multiPropertiesData.map((data: any)=>{
+    let multiPropData = multiPropertiesData.map((data: any)=>{
       data['imageList'] = imageList;
       return data;
     })
+    for(let i=0; i<5; i++){
+      this.multiPropertiesData.push(...multiPropData);
+    }
   }
 
   optionsData(){
