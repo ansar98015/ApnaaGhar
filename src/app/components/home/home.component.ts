@@ -84,4 +84,11 @@ export class HomeComponent implements OnInit {
       { queryParams: { tab: tab.title, searchValue: serchVal.value, owid: this.openWindowId }}
     );
   }
+
+  seePropertyDetails(id:any){
+    this.router.navigate(
+      [`propertyDetails/${id}`],
+      { queryParams: { id: id, rfm:'home', owid: this.openWindowId } }
+    );
+  }
 }

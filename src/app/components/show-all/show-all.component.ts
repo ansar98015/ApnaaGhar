@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { allPrimeNGModules } from '../../services/primeNGShared';
 import { FormsModule } from '@angular/forms';
 import { SharedDataService } from '../../services/shared-data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-all',
@@ -10,7 +11,7 @@ import { SharedDataService } from '../../services/shared-data.service';
   standalone: true,
   imports: [allPrimeNGModules, FormsModule],
 })
-export class ShowAllComponent implements OnInit {
+export class ShowAllComponent implements OnInit, AfterViewInit{
   filerBtns:any[] = [];
   propertyTypeOptions:any[] = [];
   priceOptions:any[] = [];
@@ -22,8 +23,9 @@ export class ShowAllComponent implements OnInit {
   maxPrice:number = 1000000000;
   priceRangeValues: number[] = [this.minPrice, this.maxPrice];
   multiPropertiesData:any[] = [];
+  openWindowId!:any;
 
-  constructor(private sharedDataService: SharedDataService) { }
+  constructor(private sharedDataService: SharedDataService, private router:Router, private actRoute:ActivatedRoute) { }
 
   ngOnInit() {
     this.filerBtns = [
@@ -34,6 +36,12 @@ export class ShowAllComponent implements OnInit {
     ]
     this.optionsData();
     this.showAllData();
+  }
+
+  ngAfterViewInit(){
+    this.actRoute.queryParams.subscribe((params) => {
+      this.openWindowId = params['owid'];
+    });
   }
 
   showAllData(){
@@ -127,5 +135,12 @@ export class ShowAllComponent implements OnInit {
     }else{
       this.maxPrice = e.value;
     }
+  }
+
+  seeDetailsOfProperty(id:any){
+    this.router.navigate(
+      [`propertyDetails/${id}`],
+      { queryParams:{ id: id, rfm: 'showAll', owid: this.openWindowId } }
+    )
   }
 }
