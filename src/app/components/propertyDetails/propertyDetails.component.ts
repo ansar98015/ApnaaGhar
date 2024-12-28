@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PropertyDetailsComponent implements OnInit, AfterViewInit {
   propertyId:any;
   routerFrom:any;
+  propertyData:any = {};
 
 
   constructor(private sharedDataService: SharedDataService, private router:Router, private actRoute:ActivatedRoute) { }
@@ -25,5 +26,18 @@ export class PropertyDetailsComponent implements OnInit, AfterViewInit {
       this.propertyId = params['id'];
       this.routerFrom = params['rfm'];
     });
+    setTimeout(()=>{
+      if(this.propertyId)this.getDatafromService();
+    },0)
+  }
+
+  getDatafromService(){
+    let multiPropertiesData = JSON.parse(JSON.stringify(this.sharedDataService.multiPropertiesData));
+    let imageList = this.sharedDataService.imageList;
+    let multiData = multiPropertiesData.find((data:any)=>data.id == this.propertyId);
+    if(multiData){
+      multiData['imageList'] = imageList;
+      this.propertyData = multiData;
+    }
   }
 }

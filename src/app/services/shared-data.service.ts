@@ -131,7 +131,13 @@ export class SharedDataService {
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1200sq',
-      "imageUrl": "https://picsum.photos/200/300?random=1"
+      "imageUrl": "https://picsum.photos/200/300?random=1",
+      "furnish":"Unfurnished",
+      "lift": 2,
+      "electricityAvl": "Yes/Rare Powercut",
+      "waterAvl": "24 Hours Available",
+      "carParking": "3 Covered",
+      "posted":"01-01-2025"
     },
     {
       "id": 2,
@@ -143,7 +149,13 @@ export class SharedDataService {
       "bedrooms": 3,
       "bathrooms": 2,
       "sq_ft": '1400sq',
-      "imageUrl": "https://picsum.photos/200/300?random=2"
+      "imageUrl": "https://picsum.photos/200/300?random=2",
+      "furnish":"Furnished",
+      "lift": 3,
+      "electricityAvl": "Yes/Rare Powercut",
+      "waterAvl": "24 Hours Available",
+      "carParking": "3 Covered",
+      "posted":"01-01-2025"
     },
     {
       "id": 3,
@@ -155,7 +167,13 @@ export class SharedDataService {
       "bedrooms": 5,
       "bathrooms": 4,
       "sq_ft": '3500sq',
-      "imageUrl": "https://picsum.photos/200/300?random=3"
+      "imageUrl": "https://picsum.photos/200/300?random=3",
+      "furnish":"Unfurnished",
+      "lift": 1,
+      "electricityAvl": "Yes/Rare Powercut",
+      "waterAvl": "24 Hours Available",
+      "carParking": "5 Covered",
+      "posted":"01-01-2025"
     },
     {
       "id": 4,
@@ -167,7 +185,13 @@ export class SharedDataService {
       "bedrooms": 1,
       "bathrooms": 1,
       "sq_ft": '900sq',
-      "imageUrl": "https://picsum.photos/200/300?random=4"
+      "imageUrl": "https://picsum.photos/200/300?random=4",
+      "furnish":"Unfurnished",
+      "lift": 1,
+      "electricityAvl": "Yes/Rare Powercut",
+      "waterAvl": "24 Hours Available",
+      "carParking": "1 Covered",
+      "posted":"01-01-2025"
     },
     {
       "id": 5,
@@ -179,7 +203,13 @@ export class SharedDataService {
       "bedrooms": 4,
       "bathrooms": 3,
       "sq_ft": '2000sq',
-      "imageUrl": "https://picsum.photos/200/300?random=5"
+      "imageUrl": "https://picsum.photos/200/300?random=5",
+      "furnish":"Furnished",
+      "lift": 1,
+      "electricityAvl": "Yes/Rare Powercut",
+      "waterAvl": "24 Hours Available",
+      "carParking": "1 Covered",
+      "posted":"01-01-2025"
     },
     {
       "id": 6,
@@ -191,7 +221,13 @@ export class SharedDataService {
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1100sq',
-      "imageUrl": "https://picsum.photos/200/300?random=6"
+      "imageUrl": "https://picsum.photos/200/300?random=6",
+      "furnish":"Unfurnished",
+      "lift": 3,
+      "electricityAvl": "Yes/Rare Powercut",
+      "waterAvl": "24 Hours Available",
+      "carParking": "1 Covered",
+      "posted":"01-01-2025"
     },
   ];
 
