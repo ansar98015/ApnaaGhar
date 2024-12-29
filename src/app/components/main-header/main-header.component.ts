@@ -152,4 +152,8 @@ export class MainHeaderComponent implements OnInit {
       this.router.navigate(['/home']);
     }
   }
+
+  goToLoginPage(){
+    this.router.navigate(['/login']);
+  }
 }
