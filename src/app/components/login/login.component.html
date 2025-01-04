@@ -1,3 +1,62 @@
-<p>
-  login works!
-</p>
+<div class="login-comp display-flex justify-content-center paddingBLRem1">
+  <div class="login-sec">
+    <div class="login-img-sec display-flex justify-content-center align-items-center">
+      <div class="welcm-txt">
+        Welcome Back
+      </div>
+    </div>
+    <div class="login-container display-flex justify-content-center align-items-center flex-direction-column gapRem2">
+      <div class="login-title">Login</div>
+      <div class="login-form-group display-flex flex-direction-column" [formGroup]="loginForm">
+        <div class="form-group">
+          <input
+            class="login-input width100pc"
+            id="username"
+            type="text"
+            formControlName="username"
+            placeholder="Username, phone number or email"
+          />
+          <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+            <small class="error-text">Username is required.</small>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <input
+            class="login-input width100pc"
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            <small class="error-text"
+              style="cursor: pointer;"
+              (click)="showPswdValidation()">
+              <span class="pi pi-info-circle"></span>
+              Click to see password validation.
+            </small>
+            <p-dialog 
+              header="Password Validation"
+              [modal]="true"
+              [(visible)]="pswdDetailsDialog">
+                <div>
+                  <ul>
+                    Password must include:
+                    <li>At least one uppercase letter (A-Z).</li>
+                    <li>At least one lowercase letter (a-z).</li>
+                    <li>At least one special character from: <code>( &#64;, #, $, & )</code>.</li>
+                    <li>At least one numeric digit (0-9).</li>
+                    <li>A minimum length of 8 characters.</li>
+                  </ul>
+                </div>
+            </p-dialog>
+          </div>
+        </div>
+    
+        <button type="submit" class="login-btn width100pc" [disabled]="loginForm.invalid" (click)="onLogin()">Login</button>
+      </div>
+      <div class="sign-up" (click)="createAccount()">New to ApnaaGhar?Sign Up</div>
+    </div>
+  </div>
+</div>
