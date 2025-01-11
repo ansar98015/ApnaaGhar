@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   loginForm!: FormGroup;
   pswdDetailsDialog:boolean = false;
   openWindowId!:any;
+  invalidUserPswd:boolean = false;
 
   constructor(private fb: FormBuilder, private router:Router, private actRoute:ActivatedRoute, private authService: AuthService) { }
 
@@ -53,15 +54,22 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   onLogin(){
-    if(
-      this.loginForm['valid'] 
-      && (this.loginForm.value).username === 'ApnaaGhar' 
-      && (this.loginForm.value).password === 'Aghar@123'
-    ){
-      this.authService.isLogin = true;
-      this.authService.user = this.loginForm.value;
-      this.router.navigate(['/home']);
+    if(this.loginForm['valid']){
+
+      if((this.loginForm.value).username === 'ApnaaGhar' && (this.loginForm.value).password === 'Aghar@123'){
+        this.invalidUserPswd = false;
+        this.authService.isLogin = true;
+        this.authService.user = this.loginForm.value;
+        this.router.navigate(['/home']);
+      }else{
+        this.invalidUserPswd = true;
+      }
+
     }
+  }
+
+  onInput(e:any){
+    this.invalidUserPswd = false;
   }
 
   showPswdValidation(){

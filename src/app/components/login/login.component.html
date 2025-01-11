@@ -15,6 +15,7 @@
             type="text"
             formControlName="username"
             placeholder="Username, phone number or email"
+            (input)="onInput($event)"
           />
           <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
             <small class="error-text">Username is required.</small>
@@ -28,6 +29,7 @@
             type="password"
             formControlName="password"
             placeholder="Password"
+            (input)="onInput($event)"
           />
           <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
             <small class="error-text"
@@ -52,6 +54,10 @@
                 </div>
             </p-dialog>
           </div>
+          <small *ngIf="invalidUserPswd" class="error-text">
+            <span class="pi pi-times-circle"></span>
+            Invalid username or password try again.
+          </small>
         </div>
     
         <button type="submit" class="login-btn width100pc" [disabled]="loginForm.invalid" (click)="onLogin()">Login</button>
