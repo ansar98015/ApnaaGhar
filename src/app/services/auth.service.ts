@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 
 export class AuthService {
-  isLogin:boolean = true;
+  isLogin:boolean = true; // After completion of project isLogin will be set to False.
+  user:any = {};
 
   constructor() { }
 
