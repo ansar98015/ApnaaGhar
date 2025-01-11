@@ -4,11 +4,12 @@ import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validator
 import { allPrimeNGModules } from '../../services/primeNGShared';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { CreateAccountComponent } from "../create-account/create-account.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, allPrimeNGModules],
+  imports: [CommonModule, ReactiveFormsModule, allPrimeNGModules, CreateAccountComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   pswdDetailsDialog:boolean = false;
   openWindowId!:any;
   invalidUserPswd:boolean = false;
+  isloginPanel:boolean = true;
 
   constructor(private fb: FormBuilder, private router:Router, private actRoute:ActivatedRoute, private authService: AuthService) { }
 
@@ -77,6 +79,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   createAccount(){
-    this.router.navigate(['/createAccount']);
+    this.isloginPanel = false;
+    // this.router.navigate(['/createAccount']);
   }
 }
