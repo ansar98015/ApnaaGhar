@@ -80,6 +80,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   createAccount(){
     this.isloginPanel = false;
-    // this.router.navigate(['/createAccount']);
+  }
+
+  showloginPage(e:boolean){
+    this.isloginPanel = true;
   }
 }

@@ -57,7 +57,7 @@
           </div>
           <small *ngIf="invalidUserPswd" class="error-text">
             <span class="pi pi-times-circle"></span>
-            Invalid username or password try again.
+            Invalid username or password please try again.
           </small>
         </div>
     
@@ -66,7 +66,9 @@
       <div class="sign-up" (click)="createAccount()">New to ApnaaGhar?Sign Up</div>
     </div>
     <div *ngIf="!isloginPanel" class="createAccount-container">
-      <app-create-account></app-create-account>
+      <app-create-account
+        (showLogin)="showloginPage($event)">
+      </app-create-account>
     </div>
   </div>
 </div>
