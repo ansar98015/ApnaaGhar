@@ -24,6 +24,7 @@ export class ShowAllComponent implements OnInit, AfterViewInit{
   priceRangeValues: number[] = [this.minPrice, this.maxPrice];
   multiPropertiesData:any[] = [];
   openWindowId!:any;
+  searchedValue:string = ''
 
   constructor(private sharedDataService: SharedDataService, private router:Router, private actRoute:ActivatedRoute) { }
 
