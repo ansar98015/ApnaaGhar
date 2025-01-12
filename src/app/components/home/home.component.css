@@ -249,3 +249,14 @@
 ::ng-deep.p-carousel-header{
     margin-bottom: 1rem;
 }
+
+.notice-container{
+    color: red;
+    background: #ffff7a;
+    font-family: math;
+    font-size: 0.9rem;
+}
+
+.isNoticeExpanded{
+    text-align: center;
+}

@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   multiPropertiesData:any[] = [];
   searchTabDataSource:any[] = [];
   openWindowId!:Guid;
+  isNoticeExpanded: boolean = false;
 
   constructor(private router: Router, private sharedDataService: SharedDataService) { }
 
@@ -91,4 +92,16 @@ export class HomeComponent implements OnInit {
       { queryParams: { id: id, rfm:'home', owid: this.openWindowId } }
     );
   }
+
+  toggleNotice() {
+    this.isNoticeExpanded = !this.isNoticeExpanded;
+  }
+
+  noticeText: string = `This is a personal project and not a business project. 
+  It has no connection with any business or commercial entity. The design, 
+  architecture, and all other aspects of this project have been created 
+  independently and are not copied from any other platform, project, or website. 
+  While certain elements may appear similar to those on other platforms or websites, 
+  this project has no affiliation with them in any way.`;
+  
 }

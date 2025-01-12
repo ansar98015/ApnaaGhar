@@ -21,6 +21,14 @@
         </div>
     </div>
 
+    <div class="notice-container paddingRem1" [ngClass]="!isNoticeExpanded? 'isNoticeExpanded' : ''" >
+        <span>⚠️ Important Notice: </span>
+        <span>{{ isNoticeExpanded ? noticeText : (noticeText | slice:0:189) }}{{ isNoticeExpanded ? '' : '...' }}</span>
+        <span (click)="toggleNotice()" style="text-decoration: underline; cursor: pointer;">
+            {{ isNoticeExpanded ? 'See less' : 'See more' }}
+        </span>
+    </div>
+
     <div class="carousel-div display-flex justify-content-center align-items-center paddingTRem1-5">
         <div class="card carousel-card">
             <p-carousel 
