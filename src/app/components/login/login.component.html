@@ -10,6 +10,38 @@
       <div class="login-title">Login</div>
       <div class="login-form-group display-flex flex-direction-column" [formGroup]="loginForm">
         <div class="form-group">
+          <div class="member-container display-flex align-items-center gapRem0-5">
+            <div class="category-title">Are you ?</div>
+            <div class="member-div display-flex align-items-center">
+              <input
+                class="login-member-input"
+                id="AdminMember"
+                type="radio"
+                value="Admin"
+                formControlName="member"
+                (input)="onInput($event)"
+              />
+              <div class="AdminMember">Admin</div>
+            </div>
+ 
+            <div class="member-div display-flex align-items-center">
+              <input
+                class="login-member-input"
+                id="userMember"
+                type="radio"
+                value="User"
+                formControlName="member"
+                (input)="onInput($event)"
+              />
+              <div class="userMember">User</div>
+            </div>
+          </div>
+          <div *ngIf="loginForm.get('member')?.touched && loginForm.get('member')?.invalid">
+            <small class="error-text">Please select category.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
           <input
             class="login-input width100pc"
             id="username"
@@ -33,35 +65,15 @@
             (input)="onInput($event)"
           />
           <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
-            <small class="error-text"
-              style="cursor: pointer;"
-              (click)="showPswdValidation()">
-              <span class="pi pi-info-circle"></span>
-              Click to see password validation.
-            </small>
-            <p-dialog 
-              header="Password Validation"
-              [modal]="true"
-              [(visible)]="pswdDetailsDialog">
-                <div>
-                  <ul>
-                    Password must include:
-                    <li>At least one uppercase letter (A-Z).</li>
-                    <li>At least one lowercase letter (a-z).</li>
-                    <li>At least one special character from: <code>( &#64;, #, $, & )</code>.</li>
-                    <li>At least one numeric digit (0-9).</li>
-                    <li>A minimum length of 8 characters.</li>
-                  </ul>
-                </div>
-            </p-dialog>
+            <small class="error-text">Password is required.</small>
           </div>
           <small *ngIf="invalidUserPswd" class="error-text">
             <span class="pi pi-times-circle"></span>
-            Invalid username or password please try again.
+            Invalid inputs please try again.
           </small>
         </div>
     
-        <button type="submit" class="login-btn width100pc" [disabled]="loginForm.invalid" (click)="onLogin()">Login</button>
+        <button type="submit" class="login-btn width100pc" (click)="onLogin()">Login</button>
       </div>
       <div class="sign-up" (click)="createAccount()">New to ApnaaGhar?Sign Up</div>
     </div>

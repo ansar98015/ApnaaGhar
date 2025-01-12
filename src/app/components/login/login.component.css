@@ -63,3 +63,18 @@
 input.ng-invalid.ng-touched{
     border: 1px solid red;
 }
+
+.login-member-input{
+    transform: scale(1.1);
+}
+
+.AdminMember,
+.userMember{
+    margin-top: 3px;
+    margin-left: 1px;
+}
+
+.member-container{
+    color: #515151;
+    font-size: 0.9rem;
+}
