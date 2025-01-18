@@ -5,7 +5,7 @@
         <div class="city-title marginBRem0-3">{{cities.title}}</div>
         <div class="cities marginBRem0-2" *ngFor="let cityname of cities.city">
           <span class="pi pi-angle-right"></span>
-          <span>{{cities.type}} in {{cityname.city}}</span>
+          <span (click)="showSelectedData(cities.category, cityname.city)">{{cities.type}} in {{cityname.city}}</span>
         </div>
       </div>
     </div>
@@ -15,12 +15,12 @@
       <div class="social-media-div display-flex justify-content-space-between align-items-center paddingBLRem0-6 paddingILRem0-5">
         <div class="follow">Follow on</div>
         <div class="follow-icons display-flex align-items-center gapRem1">
-          <div class="icon-div facebook"><span class="pi pi-facebook"></span></div>
-          <div class="icon-div instagram"><span class="pi pi-instagram"></span></div>
-          <div class="icon-div linkedin"><span class="pi pi-linkedin"></span></div>
-          <div class="icon-div pinterest"><span class="pi pi-pinterest"></span></div>
-          <div class="icon-div twitter"><span class="pi pi-twitter"></span></div>
-          <div class="icon-div youtube"><span class="pi pi-youtube"></span></div>
+          <div class="icon-div facebook" (click)="socialLinkClicked('facebook')"><span class="pi pi-facebook"></span></div>
+          <div class="icon-div instagram" (click)="socialLinkClicked('instagram')"><span class="pi pi-instagram"></span></div>
+          <div class="icon-div linkedin" (click)="socialLinkClicked('linkedin')"><span class="pi pi-linkedin"></span></div>
+          <div class="icon-div twitter" (click)="socialLinkClicked('twitter')"><span class="pi pi-twitter"></span></div>
+          <div class="icon-div youtube" (click)="socialLinkClicked('youtube')"><span class="pi pi-youtube"></span></div>
+          <div class="icon-div pinterest" (click)="socialLinkClicked('pinterest')"><span class="pi pi-pinterest"></span></div>
         </div>
       </div>
       <div class="disclamer-div paddingBLRem0-5">

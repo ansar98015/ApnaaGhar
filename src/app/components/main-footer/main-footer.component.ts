@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Guid } from 'guid-typescript';
 
 @Component({
   selector: 'app-main-footer',
@@ -10,10 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainFooterComponent implements OnInit {
   topCityPropertyData:any[] = [];
+  openWindowId:any;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    this.openWindowId = Guid.create();
+
     let cityNames = [
       { city: "Delhi",  },
       { city: "Mumbai",  },
@@ -33,11 +38,50 @@ export class MainFooterComponent implements OnInit {
     ];
 
     this.topCityPropertyData = [
-      { title: 'Property for Sale', type: 'Real estate', city: cityNames },
-      { title: 'Flats for Sale', type: 'Flats', city: cityNames },
-      { title: 'Flats for Rent', type: 'Flats for Rent', city: cityNames },
-      { title: 'New Projects', type: 'New Projects', city: cityNames },
+      { title: 'Property for Sale', type: 'Real estate', category:'buy', city: cityNames },
+      { title: 'Flats for Sale', type: 'Flats', category:'buy', city: cityNames },
+      { title: 'Flats for Rent', type: 'Flats for Rent', category:'rent', city: cityNames },
+      { title: 'New Projects', type: 'New Projects', category:'projects', city: cityNames },
     ]
   }
 
+  showSelectedData(category:string, cityname:string){
+    this.router.navigate(['/showAll'],
+      {queryParams:{ rfm:'footer', type: category, cityname: cityname, owid: this.openWindowId }}
+    )
+  }
+
+  socialLinkClicked(linktype:string){
+    switch(linktype){
+      case 'facebook':{
+        window.open('https://www.facebook.com/the.ansarkhan3', '_blank');
+        break;
+      }
+
+      case 'instagram':{
+        window.open('https://www.instagram.com/the.ansar3', '_blank');
+        break;
+      }
+
+      case 'linkedin':{
+        window.open('https://www.linkedin.com/in/ansar-khan-711973207', '_blank');
+        break;
+      }
+
+      case 'twitter':{
+        window.open('https://www.x.com/AnsarKhan881', '_blank');
+        break;
+      }
+
+      case 'youtube':{
+        window.open('https://www.youtube.com/@the.ansar3', '_blank');
+        break;
+      }
+
+      default:{
+        console.error('Invalid link');
+        break;
+      }
+    }
+  }
 }
