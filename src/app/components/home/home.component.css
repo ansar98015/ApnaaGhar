@@ -229,6 +229,7 @@
 .headerInputText,
 .headerInputSerBtn{
     height: 2rem;
+    box-shadow: none;
 }
 
 /* .carousel-div{
