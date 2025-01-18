@@ -138,10 +138,21 @@
     min-width: 2rem;
 }
 
+::ng-deep.type-container .p-inputtext,
 ::ng-deep.searched-container .p-inputtext {
     padding: 0.2rem 0.5rem;
     box-shadow: none;
     background: #f3f4f6;
+}
+
+::ng-deep.type-container .p-dropdown .p-dropdown-trigger{
+    width: 1.5rem;
+    background: #f3f4f6;
+}
+
+::ng-deep.type-container .p-dropdown{
+    width: 7rem;
+    box-shadow: none;
 }
 
 ::ng-deep.apply-btn .p-button{

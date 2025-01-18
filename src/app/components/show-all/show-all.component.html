@@ -10,6 +10,14 @@
           </p-inputGroupAddon>
         </p-inputGroup>
       </div>
+      <div class="type-container">
+        <p-dropdown 
+          class="filter-type"
+          [options]="propType" 
+          [(ngModel)]="selectedPropType" 
+          optionLabel="type" 
+          placeholder="Type" />
+      </div>
       <p-button
         *ngFor="let btn of filerBtns"
         [rounded]="true"

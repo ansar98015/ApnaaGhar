@@ -11,7 +11,7 @@
                 <p-tabView class="filter-tab">
                     <p-tabPanel *ngFor="let tab of searchTabDataSource" [header]="tab.title">
                         <p-inputGroup>
-                            <input #searchInput type="text" pInputText placeholder="Search here" class="headerInputText"/>
+                            <input #searchInput type="text" pInputText placeholder="Search location here" class="headerInputText"/>
                             <button type="button" pButton icon="pi pi-search" class="headerInputSerBtn"
                             (click)="homeSearchClicked(tab, searchInput)">&nbsp;Search</button>
                         </p-inputGroup>
