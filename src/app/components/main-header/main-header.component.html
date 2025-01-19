@@ -8,14 +8,11 @@
                 ApnaaGhar
             </div>
         </div>
-        <div class="header-input">
-            <!-- <p-inputGroup>
-                <input type="text" pInputText placeholder="Search here" class="headerInputText"/>
-                <button type="button" pButton icon="pi pi-search" class="headerInputSerBtn">&nbsp;Search</button>
-            </p-inputGroup> -->
 
+        <div class="header-input">
             <p-megaMenu orientation="horizontal" [model]="items"/>
         </div>
+        
         <div class="home-header-right display-flex align-items-center gapRem2">
             <div class="header-right-items display-flex align-items-center gapRem0-5">
                 <div *ngFor="let option of headerItems" class="home-btn-div display-flex gapRem0-5 paddingRem0-4"

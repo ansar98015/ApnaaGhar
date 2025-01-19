@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { allPrimeNGModules } from '../../services/primeNGShared';
 import { Router } from '@angular/router';
+import { SharedDataService } from '../../services/shared-data.service';
+import { Guid } from 'guid-typescript';
 
 @Component({
   selector: 'app-main-header',
@@ -13,133 +15,90 @@ export class MainHeaderComponent implements OnInit {
 
   headerItems: any[] | undefined;
   items: any[] | undefined;
-  searchPanelImage!:string;
-  constructor(private router: Router) { }
+  openWindowId:any;
+
+  constructor(private router: Router, private sharedDataService: SharedDataService) { }
 
   ngOnInit() {
-    this.searchPanelImage = 'https://fastly.picsum.photos/id/411/5000/2358.jpg?hmac=YjkATffpMa8rh663_FXDsGY0W-Y0hAPfqpjXZoP65hQ'
+    this.openWindowId = Guid.create();
+    
     this.headerItems = [
       { label: 'Home', icon: 'pi pi-home' },
       { label: 'Contact Us', icon: 'pi pi-envelope' }
     ]
 
+    let cityData = (this.sharedDataService.cityNames).map((data:any)=>{
+      data['label'] = data['city'];
+      return data
+    });
+    
     this.items = [
       {
-        label: 'Furniture',
-        icon: 'pi pi-box',
+        label: 'Buy',
         items: [
           [
             {
-              label: 'Living Room',
-              items: [{ label: 'Accessories' }, { label: 'Armchair' }, { label: 'Coffee Table' }, { label: 'Couch' }, { label: 'TV Stand' }]
+              label: 'Buy in',
+              items: cityData.map(city => ({
+                ...city,
+                command: () => this.megaMenuItemClick('buy', city.label)
+              }))
             }
           ],
+        ]
+      },
+      {
+        label: 'Rent/Pg',
+        items: [
           [
             {
-              label: 'Kitchen',
-              items: [{ label: 'Bar stool' }, { label: 'Chair' }, { label: 'Table' }]
-            }
-          ],
-          [
-            {
-              label: 'Bedroom',
-              items: [{ label: 'Bed' }, { label: 'Chaise lounge' }, { label: 'Cupboard' }, { label: 'Dresser' }, { label: 'Wardrobe' }]
-            }
-          ],
-          [
-            {
-              label: 'Office',
-              items: [{ label: 'Bookcase' }, { label: 'Cabinet' }, { label: 'Chair' }, { label: 'Desk' }, { label: 'Executive Chair' }]
+              label: 'Rent/Pg in',
+              items: cityData.map(city => ({
+                ...city,
+                command: () => this.megaMenuItemClick('rent/pg', city.label)
+              }))
             }
           ]
         ]
       },
       {
-        label: 'Electronics',
-        icon: 'pi pi-mobile',
+        label: 'Projects',
         items: [
           [
             {
-              label: 'Computer',
-              items: [{ label: 'Monitor' }, { label: 'Mouse' }, { label: 'Notebook' }, { label: 'Keyboard' }, { label: 'Printer' }, { label: 'Storage' }]
-            }
-          ],
-          [
-            {
-              label: 'Home Theather',
-              items: [{ label: 'Projector' }, { label: 'Speakers' }, { label: 'TVs' }]
-            }
-          ],
-          [
-            {
-              label: 'Gaming',
-              items: [{ label: 'Accessories' }, { label: 'Console' }, { label: 'PC' }, { label: 'Video Games' }]
-            }
-          ],
-          [
-            {
-              label: 'Appliances',
-              items: [{ label: 'Coffee Machine' }, { label: 'Fridge' }, { label: 'Oven' }, { label: 'Vaccum Cleaner' }, { label: 'Washing Machine' }]
+              label: 'Projects in',
+              items: cityData.map(city => ({
+                ...city,
+                command: () => this.megaMenuItemClick('projects', city.label)
+              }))
             }
           ]
         ]
       },
       {
-        label: 'Sports',
-        icon: 'pi pi-clock',
+        label: 'Commerical',
         items: [
           [
             {
-              label: 'Football',
-              items: [{ label: 'Kits' }, { label: 'Shoes' }, { label: 'Shorts' }, { label: 'Training' }]
-            }
-          ],
-          [
-            {
-              label: 'Running',
-              items: [{ label: 'Accessories' }, { label: 'Shoes' }, { label: 'T-Shirts' }, { label: 'Shorts' }]
-            }
-          ],
-          [
-            {
-              label: 'Swimming',
-              items: [{ label: 'Kickboard' }, { label: 'Nose Clip' }, { label: 'Swimsuits' }, { label: 'Paddles' }]
-            }
-          ],
-          [
-            {
-              label: 'Tennis',
-              items: [{ label: 'Balls' }, { label: 'Rackets' }, { label: 'Shoes' }, { label: 'Training' }]
+              label: 'Commerical in',
+              items: cityData.map(city => ({
+                ...city,
+                command: () => this.megaMenuItemClick('commerical', city.label)
+              }))
             }
           ]
         ]
       },
       {
-        label: 'Electronics',
-        icon: 'pi pi-mobile',
+        label: 'Dealers',
         items: [
           [
             {
-              label: 'Computer',
-              items: [{ label: 'Monitor' }, { label: 'Mouse' }, { label: 'Notebook' }, { label: 'Keyboard' }, { label: 'Printer' }, { label: 'Storage' }]
-            }
-          ],
-          [
-            {
-              label: 'Home Theather',
-              items: [{ label: 'Projector' }, { label: 'Speakers' }, { label: 'TVs' }]
-            }
-          ],
-          [
-            {
-              label: 'Gaming',
-              items: [{ label: 'Accessories' }, { label: 'Console' }, { label: 'PC' }, { label: 'Video Games' }]
-            }
-          ],
-          [
-            {
-              label: 'Appliances',
-              items: [{ label: 'Coffee Machine' }, { label: 'Fridge' }, { label: 'Oven' }, { label: 'Vaccum Cleaner' }, { label: 'Washing Machine' }]
+              label: 'Dealers in',
+              items: cityData.map(city => ({
+                ...city,
+                command: () => this.megaMenuItemClick('dealers', city.label)
+              }))
             }
           ]
         ]
@@ -159,5 +118,12 @@ export class MainHeaderComponent implements OnInit {
 
   goToLoginPage(){
     this.router.navigate(['/login']);
+  }
+
+  megaMenuItemClick(category:string, cityName:any){
+    this.router.navigate(
+      ['/showAll'],
+      { queryParams: { rfm:'headerMenu', category: category, searchValue: cityName, owid: this.openWindowId }}
+    );
   }
 }
