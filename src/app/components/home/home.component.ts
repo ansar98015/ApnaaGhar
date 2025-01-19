@@ -30,11 +30,11 @@ export class HomeComponent implements OnInit {
 
   propData(){
     this.searchTabDataSource = [
-      { title: 'BUY', content: 'Tab BUY' },
-      { title: 'RENT / PG', content: 'Tab 2 Content' },
-      { title: 'PROJECTS', content: 'Tab 3 Content' },
-      { title: 'COMMERICAL', content: 'Tab 4 Content' },
-      { title: 'DEALERS', content: 'Tab 5 Content' }
+      { title: 'BUY', category: 'buy' },
+      { title: 'RENT / PG', category: 'rent/pg' },
+      { title: 'PROJECTS', category: 'projects' },
+      { title: 'COMMERICAL', category: 'commerical' },
+      { title: 'DEALERS', category: 'dealers' }
     ];
     
     this.propertiesData = this.sharedDataService.propertiesData;
@@ -80,10 +80,12 @@ export class HomeComponent implements OnInit {
   }
 
   homeSearchClicked(tab:any, serchVal:any){
-    this.router.navigate(
-      ['/showAll'],
-      { queryParams: { tab: tab.title, searchValue: serchVal.value, owid: this.openWindowId }}
-    );
+    if(serchVal.value){
+      this.router.navigate(
+        ['/showAll'],
+        { queryParams: { tab: tab.title, rfm:'home', type: tab.category, searchValue: serchVal.value, owid: this.openWindowId }}
+      );
+    }
   }
 
   seePropertyDetails(id:any){
