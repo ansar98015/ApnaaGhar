@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Guid } from 'guid-typescript';
+import { SharedDataService } from '../../services/shared-data.service';
 
 @Component({
   selector: 'app-main-footer',
@@ -14,29 +15,13 @@ export class MainFooterComponent implements OnInit {
   topCityPropertyData:any[] = [];
   openWindowId:any;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private sharedDataService: SharedDataService) { }
 
   ngOnInit() {
     this.openWindowId = Guid.create();
 
-    let cityNames = [
-      { city: "Delhi",  },
-      { city: "Mumbai",  },
-      { city: "Gurgaon",  },
-      { city: "Bangalore",  },
-      { city: "Pune",  },
-      { city: "Noida",  },
-      { city: "Lucknow",  },
-      { city: "Ghaziabad",  },
-      { city: "Navi Mumbai",  },
-      { city: "Greater Noida",  },
-      { city: "Chennai",  },
-      { city: "Thane",  },
-      { city: "Ahmedabad",  },
-      { city: "Jaipur",  },
-      { city: "Hyderabad",  }
-    ];
-
+    let cityNames = this.sharedDataService.cityNames;
+    
     this.topCityPropertyData = [
       { title: 'Property for Sale', type: 'Real estate', category:'buy', city: cityNames },
       { title: 'Flats for Sale', type: 'Flats', category:'buy', city: cityNames },

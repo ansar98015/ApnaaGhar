@@ -242,4 +242,22 @@ export class SharedDataService {
     { id:8, imageUrl: "https://picsum.photos/200/300?random=8" },
     { id:9, imageUrl: "https://picsum.photos/200/300?random=9" },
   ]
+
+  cityNames = [
+    { city: "Delhi",  },
+    { city: "Mumbai",  },
+    { city: "Gurgaon",  },
+    { city: "Bangalore",  },
+    { city: "Pune",  },
+    { city: "Noida",  },
+    { city: "Lucknow",  },
+    { city: "Ghaziabad",  },
+    { city: "Navi Mumbai",  },
+    { city: "Greater Noida",  },
+    { city: "Chennai",  },
+    { city: "Thane",  },
+    { city: "Ahmedabad",  },
+    { city: "Jaipur",  },
+    { city: "Hyderabad",  }
+  ];
 }
