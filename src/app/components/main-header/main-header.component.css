@@ -41,3 +41,15 @@
 ::ng-deep.header-input .p-megamenu .p-menuitem > .p-menuitem-content .p-menuitem-link{
     padding: 0.5rem 1.25rem;
 }
+
+.icon-div{
+    cursor: pointer;
+}
+
+.login{
+    color: var(--primaryColor);
+}
+
+.logout{
+    color: red;
+}

@@ -29,7 +29,13 @@
                 styleClass="mr-2" 
                 [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" 
                 shape="circle" 
-                (click)="goToLoginPage()"/>
+                (click)="avatarClick($event, loginPopup)"/>
+                <p-overlayPanel #loginPopup>
+                    <div class="loginPopup-container">
+                        <div class="icon-div login marginBRem0-5" (click)="goToLoginPage()"><span class="pi pi-sign-in"></span>&nbsp;Login</div>
+                        <div class="icon-div logout"><span class="pi pi-power-off"></span>&nbsp;Log Out</div>
+                    </div>
+                </p-overlayPanel>
             </div>
         </div>
     </div>

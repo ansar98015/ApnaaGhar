@@ -153,6 +153,10 @@ export class MainHeaderComponent implements OnInit {
     }
   }
 
+  avatarClick(e:any, loginPopup:any){
+    loginPopup.toggle(e);
+  }
+
   goToLoginPage(){
     this.router.navigate(['/login']);
   }
