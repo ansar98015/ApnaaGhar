@@ -13,10 +13,10 @@
       <div class="type-container">
         <p-dropdown 
           class="filter-type"
-          [options]="propType" 
-          [(ngModel)]="selectedPropType" 
+          [options]="propCategory" 
+          [(ngModel)]="selectedPropCategory" 
           optionLabel="type" 
-          placeholder="Type" />
+          placeholder="Category"/>
       </div>
       <p-button
         *ngFor="let btn of filerBtns"

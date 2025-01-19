@@ -45,9 +45,9 @@ export class MainFooterComponent implements OnInit {
     ]
   }
 
-  showSelectedData(category:string, cityname:string){
+  showSelectedData(category:string, type:string, cityname:string){
     this.router.navigate(['/showAll'],
-      {queryParams:{ rfm:'footer', type: category, cityname: cityname, owid: this.openWindowId }}
+      {queryParams:{ rfm:'footer', category: category, type: type, cityname: cityname, owid: this.openWindowId }}
     )
   }
 

@@ -25,8 +25,9 @@ export class ShowAllComponent implements OnInit, AfterViewInit{
   multiPropertiesData:any[] = [];
   openWindowId!:any;
   searchedValue:string = '';
-  propType:any[] = [];
-  selectedPropType:any | undefined;
+  propCategory:any[] = [];
+  selectedPropCategory:any | undefined;
+  searchData:any = {};
 
   constructor(private sharedDataService: SharedDataService, private router:Router, private actRoute:ActivatedRoute) { }
 
@@ -43,7 +44,14 @@ export class ShowAllComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(){
     this.actRoute.queryParams.subscribe((params) => {
+      this.searchData = params;
       this.openWindowId = params['owid'];
+      setTimeout(()=>{
+        this.searchedValue = this.searchData['searchValue'] ? this.searchData['searchValue'] 
+        : this.searchData['cityname'] ? this.searchData['cityname'] : '';
+
+        this.selectedPropCategory = this.propCategory.find(data=>data['category'].includes(this.searchData['category']));
+      },0)
     });
   }
 
@@ -91,6 +99,14 @@ export class ShowAllComponent implements OnInit, AfterViewInit{
       { name: 'Individual', type: 'Ownership', value: false },
       { name: 'Builder', type: 'Ownership', value: false }
     ];
+
+    this.propCategory = [
+      { type: 'Buy', category: 'buy' },
+      { type: 'Rent/Pg', category: 'rent/pg' },
+      { type: 'Projects', category: 'projects' },
+      { type: 'Commerical', category: 'commerical' },
+      { type: 'Dealers', category: 'dealers' }
+    ]
   }
 
   popupToggle(e:any, btnName:any, popup:any){

@@ -5,7 +5,7 @@
         <div class="city-title marginBRem0-3">{{cities.title}}</div>
         <div class="cities marginBRem0-2" *ngFor="let cityname of cities.city">
           <span class="pi pi-angle-right"></span>
-          <span (click)="showSelectedData(cities.category, cityname.city)">{{cities.type}} in {{cityname.city}}</span>
+          <span (click)="showSelectedData(cities.category, cities.type, cityname.city)">{{cities.type}} in {{cityname.city}}</span>
         </div>
       </div>
     </div>

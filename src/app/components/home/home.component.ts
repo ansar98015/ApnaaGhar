@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
     if(serchVal.value){
       this.router.navigate(
         ['/showAll'],
-        { queryParams: { tab: tab.title, rfm:'home', type: tab.category, searchValue: serchVal.value, owid: this.openWindowId }}
+        { queryParams: { tab: tab.title, rfm:'home', category: tab.category, searchValue: serchVal.value, owid: this.openWindowId }}
       );
     }
   }
