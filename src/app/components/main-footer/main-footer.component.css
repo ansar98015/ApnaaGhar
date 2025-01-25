@@ -49,12 +49,20 @@
     font-family: system-ui;
 }
 
-.disclamer-div{
+.disclamer-div,
+.about-details{
     color: darkslategrey;
     font-family: system-ui;
     font-weight: 400;
     font-size: 0.8rem;
     line-height: 1.4;
+}
+
+.about-details,
+.email-sec,
+.num-sec{
+    color: white;
+    font-size: 0.9rem;
 }
 
 .social-media-div{
@@ -66,12 +74,19 @@
 }
 
 .propertyCity-div,
-.social-media{
+.social-media,
+.about-div{
     width: 85%;
 }
 
 .propertyCity-section{
     color: rgba(255, 255, 255, 0.7);
+    background: #333;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.about-section{
+    color: white;
     background: #333;
     border-bottom: 3px solid #c8c8c8;
 }
@@ -89,7 +104,18 @@
     color: white;
     padding-left: 0.5rem;
 }
+
 .prop-type{
     font-family: system-ui;
     width: 15vw;
+}
+
+.about{
+    width: 80%;
+}
+
+.about-title,
+.contact-title{
+    font-family: system-ui;
+    font-weight: 500;
 }
