@@ -28,7 +28,7 @@ export class PropertyDetailsComponent implements OnInit, AfterViewInit {
     });
     setTimeout(()=>{
       if(this.propertyId)this.getDatafromService();
-    },0)
+    },1000)
   }
 
   getDatafromService(){

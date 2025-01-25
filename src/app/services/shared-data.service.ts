@@ -17,7 +17,7 @@ export class SharedDataService {
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1200sq',
-      "imageUrl": "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68"
+      "imageUrl": "home-image4.jpg"
     },
     {
       "id": 2,
@@ -28,7 +28,7 @@ export class SharedDataService {
       "bedrooms": 3,
       "bathrooms": 2,
       "sq_ft": '1400sq',
-      "imageUrl": "https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
+      "imageUrl": "home-image2.avif"
     },
     {
       "id": 3,
@@ -39,7 +39,7 @@ export class SharedDataService {
       "bedrooms": 5,
       "bathrooms": 4,
       "sq_ft": '3500sq',
-      "imageUrl": "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ"
+      "imageUrl": "home-image9.webp"
     },
     {
       "id": 4,
@@ -50,7 +50,7 @@ export class SharedDataService {
       "bedrooms": 1,
       "bathrooms": 1,
       "sq_ft": '900sq',
-      "imageUrl": "https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w"
+      "imageUrl": "home-image10.webp"
     },
     {
       "id": 5,
@@ -61,7 +61,7 @@ export class SharedDataService {
       "bedrooms": 4,
       "bathrooms": 3,
       "sq_ft": '2000sq',
-      "imageUrl": "https://fastly.picsum.photos/id/14/2500/1667.jpg?hmac=ssQyTcZRRumHXVbQAVlXTx-MGBxm6NHWD3SryQ48G-o"
+      "imageUrl": "home-image12.jpg"
     },
     {
       "id": 6,
@@ -72,7 +72,7 @@ export class SharedDataService {
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1100sq',
-      "imageUrl": "https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4"
+      "imageUrl": "home-image6.jpg"
     },
     {
       "id": 7,
@@ -83,7 +83,7 @@ export class SharedDataService {
       "bedrooms": 2,
       "bathrooms": 1,
       "sq_ft": '1300sq',
-      "imageUrl": "https://fastly.picsum.photos/id/16/2500/1667.jpg?hmac=uAkZwYc5phCRNFTrV_prJ_0rP0EdwJaZ4ctje2bY7aE"
+      "imageUrl": "home-image7.jpg"
     },
     {
       "id": 8,
@@ -94,7 +94,7 @@ export class SharedDataService {
       "bedrooms": 3,
       "bathrooms": 3,
       "sq_ft": '2100sq',
-      "imageUrl": "https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY"
+      "imageUrl": "home-image8.jpeg"
     },
     {
       "id": 9,
@@ -105,7 +105,7 @@ export class SharedDataService {
       "bedrooms": 4,
       "bathrooms": 2,
       "sq_ft": '2500sq',
-      "imageUrl": "https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA"
+      "imageUrl": "home-image3.avif"
     },
     {
       "id": 10,
@@ -116,7 +116,7 @@ export class SharedDataService {
       "bedrooms": 1,
       "bathrooms": 1,
       "sq_ft": '600sq',
-      "imageUrl": "https://fastly.picsum.photos/id/74/4288/2848.jpg?hmac=q02MzzHG23nkhJYRXR-_RgKTr6fpfwRgcXgE0EKvNB8"
+      "imageUrl": "home-image1.webp"
     }
   ];
 
@@ -131,7 +131,7 @@ export class SharedDataService {
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1200sq',
-      "imageUrl": "https://picsum.photos/200/300?random=1",
+      "imageUrl": "home-image12.jpg",
       "furnish":"Unfurnished",
       "lift": 2,
       "electricityAvl": "Yes/Rare Powercut",
@@ -149,7 +149,7 @@ export class SharedDataService {
       "bedrooms": 3,
       "bathrooms": 2,
       "sq_ft": '1400sq',
-      "imageUrl": "https://picsum.photos/200/300?random=2",
+      "imageUrl": "home-image10.webp",
       "furnish":"Furnished",
       "lift": 3,
       "electricityAvl": "Yes/Rare Powercut",
@@ -167,7 +167,7 @@ export class SharedDataService {
       "bedrooms": 5,
       "bathrooms": 4,
       "sq_ft": '3500sq',
-      "imageUrl": "https://picsum.photos/200/300?random=3",
+      "imageUrl": "home-image9.webp",
       "furnish":"Unfurnished",
       "lift": 1,
       "electricityAvl": "Yes/Rare Powercut",
@@ -185,7 +185,7 @@ export class SharedDataService {
       "bedrooms": 1,
       "bathrooms": 1,
       "sq_ft": '900sq',
-      "imageUrl": "https://picsum.photos/200/300?random=4",
+      "imageUrl": "home-image8.jpeg",
       "furnish":"Unfurnished",
       "lift": 1,
       "electricityAvl": "Yes/Rare Powercut",
@@ -203,7 +203,7 @@ export class SharedDataService {
       "bedrooms": 4,
       "bathrooms": 3,
       "sq_ft": '2000sq',
-      "imageUrl": "https://picsum.photos/200/300?random=5",
+      "imageUrl": "home-image7.jpg",
       "furnish":"Furnished",
       "lift": 1,
       "electricityAvl": "Yes/Rare Powercut",
@@ -221,7 +221,7 @@ export class SharedDataService {
       "bedrooms": 2,
       "bathrooms": 2,
       "sq_ft": '1100sq',
-      "imageUrl": "https://picsum.photos/200/300?random=6",
+      "imageUrl": "home-image6.jpg",
       "furnish":"Unfurnished",
       "lift": 3,
       "electricityAvl": "Yes/Rare Powercut",
@@ -232,15 +232,15 @@ export class SharedDataService {
   ];
 
   imageList = [
-    { id:1, imageUrl: "https://picsum.photos/200/300?random=1" },
-    { id:2, imageUrl: "https://picsum.photos/200/300?random=2" },
-    { id:3, imageUrl: "https://picsum.photos/200/300?random=3" },
-    { id:4, imageUrl: "https://picsum.photos/200/300?random=4" },
-    { id:5, imageUrl: "https://picsum.photos/200/300?random=5" },
-    { id:6, imageUrl: "https://picsum.photos/200/300?random=6" },
-    { id:7, imageUrl: "https://picsum.photos/200/300?random=7" },
-    { id:8, imageUrl: "https://picsum.photos/200/300?random=8" },
-    { id:9, imageUrl: "https://picsum.photos/200/300?random=9" },
+    { id:1, imageUrl: "home-image4.jpg" },
+    { id:2, imageUrl: "home-image2.avif" },
+    { id:3, imageUrl: "home-image9.webp" },
+    { id:4, imageUrl: "home-image10.webp" },
+    { id:5, imageUrl: "home-image12.jpg" },
+    { id:6, imageUrl: "home-image6.jpg" },
+    { id:7, imageUrl: "home-image7.jpg" },
+    { id:8, imageUrl: "home-image1.webp" },
+    { id:9, imageUrl: "home-image3.avif" },
   ]
 
   cityNames = [

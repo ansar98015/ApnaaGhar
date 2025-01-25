@@ -57,11 +57,15 @@ export class ShowAllComponent implements OnInit, AfterViewInit{
 
   showAllData(){
     let multiPropertiesData = JSON.parse(JSON.stringify(this.sharedDataService.multiPropertiesData));
-    let imageList = this.sharedDataService.imageList;
+    let imageData = JSON.parse(JSON.stringify(this.sharedDataService.imageList));
+    let imageList = imageData.map((img:any)=>{
+      img['imageUrl'] = '../../../assets/images/'+img.imageUrl
+      return img
+    });
     let multiPropData = multiPropertiesData.map((data: any)=>{
-      data['imageList'] = imageList;
+      data['imageList'] = this.shuffleArray(imageList);
       return data;
-    })
+    });
     for(let i=0; i<5; i++){
       this.multiPropertiesData.push(...multiPropData);
     }
@@ -161,5 +165,14 @@ export class ShowAllComponent implements OnInit, AfterViewInit{
       [`propertyDetails/${id}`],
       { queryParams:{ id: id, rfm: 'showAll', owid: this.openWindowId } }
     )
+  }
+
+  shuffleArray(array: any[]): any[] {
+    const copiedArray = [...array];
+    for (let i = copiedArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copiedArray[i], copiedArray[j]] = [copiedArray[j], copiedArray[i]];
+    }
+    return copiedArray;
   }
 }
