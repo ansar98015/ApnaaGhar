@@ -23,8 +23,7 @@ export class MainHeaderComponent implements OnInit {
     this.openWindowId = Guid.create();
     
     this.headerItems = [
-      { label: 'Home', icon: 'pi pi-home' },
-      { label: 'Contact Us', icon: 'pi pi-envelope' }
+      { label: 'Home', icon: 'pi pi-home' }
     ]
 
     let cityData = (this.sharedDataService.cityNames).map((data:any)=>{
