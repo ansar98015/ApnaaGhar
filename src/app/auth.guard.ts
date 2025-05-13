@@ -16,9 +16,20 @@ export class AccessPermission{
 }
 
 export const AuthGuard: CanActivateFn = (route, state) => {
-  let islogin = inject(AuthService).isLogin;
+  let userlogin = inject(AuthService).userLogin;
 
-  if(islogin){
+  if(userlogin){
+    return true;
+  }else{
+    inject(AccessPermission).navigateToLoginPage();
+    return false
+  }
+};
+
+export const adminAuthGuard: CanActivateFn = (route, state) => {
+  let adminLogin = inject(AuthService).adminLogin;
+
+  if(adminLogin){
     return true;
   }else{
     inject(AccessPermission).navigateToLoginPage();

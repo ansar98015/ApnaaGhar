@@ -44,9 +44,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
   onLogin(){
     if(this.loginForm['valid']){
       this.invalidUserPswd = false;
-      this.authService.isLogin = true;
+      this.authService.userLogin = true;
       this.authService.user = this.loginForm.value;
       if(this.loginForm.value.member === 'Admin'){
+        this.authService.adminLogin = true;
         this.router.navigate(['/adminDashboard']);
       }else{
         this.router.navigate(['/home']);
