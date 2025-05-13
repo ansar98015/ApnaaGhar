@@ -37,20 +37,20 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      member: ['', [Validators.required]],
+      member: ['User', [Validators.required]],
     });
   }
 
   onLogin(){
-    if( 
-      this.loginForm['valid'] 
-      && (this.loginForm.value).username === 'ApnaaGhar' 
-      && (this.loginForm.value).password === 'Aghar@123'
-    ){
+    if(this.loginForm['valid']){
       this.invalidUserPswd = false;
       this.authService.isLogin = true;
       this.authService.user = this.loginForm.value;
-      this.router.navigate(['/home']);
+      if(this.loginForm.value.member === 'Admin'){
+        this.router.navigate(['/adminDashboard']);
+      }else{
+        this.router.navigate(['/home']);
+      }
     }else{
       this.invalidUserPswd = true;
     }

@@ -13,5 +13,6 @@ export const routes: Routes = [
 
     { path:'login', loadComponent: () => import("./components/login/login.component").then((m)=>m.LoginComponent)},
     { path:'createAccount', loadComponent: () => import("./components/create-account/create-account.component").then((m)=>m.CreateAccountComponent)},
+    { path:'adminDashboard', loadComponent: () => import("./components/admin-dashboard/admin-dashboard.component").then((m)=>m.AdminDashboardComponent)},
     { path:'**', loadComponent: () => import("./components/not-found/not-found.component").then((m)=>m.NotFoundComponent)},
 ];
