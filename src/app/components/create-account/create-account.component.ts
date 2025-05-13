@@ -39,17 +39,16 @@ export class CreateAccountComponent implements OnInit {
   
   passwordValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const password = control.value;
-    // Regex to check the password requirements
-    const hasUpperCase = /[A-Z]/.test(password); // At least one uppercase letter
-    const hasLowerCase = /[a-z]/.test(password); // At least one lowercase letter
-    const hasNumeric = /[0-9]/.test(password); // At least one numeric digit
-    const hasSpecialChar = /[@#$&]/.test(password); // At least one special character
-    const isValidLength = password?.length >= 8; // Minimum length is 8
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumeric = /[0-9]/.test(password);
+    const hasSpecialChar = /[@#$&]/.test(password);
+    const isValidLength = password?.length >= 8;
 
     if (hasUpperCase && hasLowerCase && hasNumeric && hasSpecialChar && isValidLength) {
-      return null; // Valid password
+      return null;
     } else {
-      return { passwordInvalid: true }; // Invalid password
+      return { passwordInvalid: true };
     }
   }
 

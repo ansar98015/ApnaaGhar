@@ -3,6 +3,7 @@ import { allPrimeNGModules } from '../../services/primeNGShared';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../../services/shared-data.service';
 import { Guid } from 'guid-typescript';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-main-header',
@@ -17,7 +18,7 @@ export class MainHeaderComponent implements OnInit {
   items: any[] | undefined;
   openWindowId:any;
 
-  constructor(private router: Router, private sharedDataService: SharedDataService) { }
+  constructor(private router: Router, private sharedDataService: SharedDataService, private authService: AuthService) { }
 
   ngOnInit() {
     this.openWindowId = Guid.create();
@@ -124,5 +125,12 @@ export class MainHeaderComponent implements OnInit {
       ['/showAll'],
       { queryParams: { rfm:'headerMenu', category: category, searchValue: cityName, owid: this.openWindowId }}
     );
+  }
+
+  logOut(){
+    this.authService.userLogin = false;
+    this.authService.adminLogin = false;
+    this.authService.user = {};
+    this.router.navigate(['/home']);
   }
 }
