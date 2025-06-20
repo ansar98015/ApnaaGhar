@@ -5,9 +5,10 @@ import { catchError, tap, throwError } from 'rxjs';
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   let request = req.clone({
-    setHeaders: {
-      token: 'JWT@apnaaGhar2025'
-    }
+    withCredentials: true,
+    // setHeaders: {
+    //   token: 'JWT@apnaaGhar2025'
+    // }
   })
 
   return next(request).pipe(
