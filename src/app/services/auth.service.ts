@@ -8,6 +8,7 @@ export class AuthService {
   userLogin:boolean = false;
   adminLogin:boolean = false;
   user:any = {};
+  csrfToken:string = '';
 
   constructor() { }
 

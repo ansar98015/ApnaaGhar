@@ -5,6 +5,7 @@ import { allPrimeNGModules } from '../../services/primeNGShared';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CreateAccountComponent } from "../create-account/create-account.component";
+import { ServerService } from '../../services/server.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
   invalidUserPswd:boolean = false;
   isloginPanel:boolean = true;
 
-  constructor(private fb: FormBuilder, private router:Router, private actRoute:ActivatedRoute, private authService: AuthService) { }
+  constructor(private fb: FormBuilder, private router:Router, private actRoute:ActivatedRoute, private authService: AuthService,
+    private serverService: ServerService
+  ) { }
 
   ngOnInit() {
     this.loginFormBuilder();
@@ -46,6 +49,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
       this.invalidUserPswd = false;
       this.authService.userLogin = true;
       this.authService.user = this.loginForm.value;
+
+      this.serverService.userLogin(this.loginForm.value).subscribe(response => {
+        const csrfToken = response.headers.get('X-CSRF-Token');
+        if (csrfToken) {
+          this.authService.csrfToken = csrfToken;
+        }
+      })
+
       if(this.loginForm.value.member === 'Admin'){
         this.authService.adminLogin = true;
         this.router.navigate(['/adminDashboard']);

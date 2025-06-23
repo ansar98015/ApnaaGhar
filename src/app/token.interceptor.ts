@@ -2,13 +2,19 @@ import { HttpInterceptorFn } from '@angular/common/http';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpResponse, 
 HttpErrorResponse, HttpHeaderResponse } from '@angular/common/http';
 import { catchError, tap, throwError } from 'rxjs';
+import { AuthService } from './services/auth.service';
+import { inject } from '@angular/core';
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
+
+  let authService = inject(AuthService);
+  let csrfToken = authService.csrfToken;
+
   let request = req.clone({
     withCredentials: true,
-    // setHeaders: {
-    //   token: 'JWT@apnaaGhar2025'
-    // }
+    setHeaders: {
+      'X-CSRF-Token': csrfToken,
+    }
   })
 
   return next(request).pipe(

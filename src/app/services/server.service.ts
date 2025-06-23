@@ -12,6 +12,14 @@ export class ServerService {
 
   mainUrl:string = "https://fakerestapi.azurewebsites.net"
   apiVersion:string = "/api/v1/"
+  
+
+  userLogin(body:Object){
+    let headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    return this.http.post<any>(this.mainUrl + '/login', body, {headers})
+    .pipe(catchError((error:any)=>this.handleError(error)));
+  }
 
   getAll(category:string):Observable<any>{
     return this.http.get<any>(this.mainUrl + this.apiVersion + category)
